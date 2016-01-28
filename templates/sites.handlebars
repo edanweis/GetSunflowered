@@ -1,0 +1,44 @@
+{{!-- {{to generate template: `handlebars sites.handlebars -f sites.js` in your templates directory }} --}}
+
+{{#each sites}}
+	<li class="glide__slide">
+	    
+    	<div class="title center noselect" style="color: {{marker_color}}"> 
+    		<span class="left back_icon"><i class="material-icons">arrow_back</i></span>
+    		<span class="id_icon" style="background-color: {{marker_color}}">
+    			<span class="id_num">
+    				{{zeroPad id 2}}
+    			</span>
+    		</span>
+    		<span class="title-text">{{title}}</span>
+            <!-- <span class="right add-to-route"><i class="material-icons">more_vert</i></span> -->
+              <!-- Dropdown Trigger -->
+          <a class='dropdown-button right menu' href='#' data-activates='dropdown{{id}}'><i class="material-icons">expand_more</i></a>
+
+          <!-- Dropdown Structure -->
+          <ul id='dropdown{{id}}' class='dropdown-content'>
+            <li class=""><a href="#!" class="addtoroute"><span class="add"></span></a></li>
+            <li><a href="#!" class="getroute"><img src="img/gmap.png" class="gmap-icon"> Directions</a></li>
+            <li><a href="#!" class="mylocation" ><span class="loc_enabled"><i class="material-icons">my_location</i> GPS enabled</span><span class="loc_disabled"><i class="material-icons">location_disabled</i> GPS disabled</span></a></li>
+            <li><a href="#!" class="logout" ><i class="material-icons">power_settings_new</i> Logout</a></li>
+          </ul>
+
+    	</div>
+    	<div class="description animated invisible">
+        <p class="address">{{address}}</p>
+            <p class="designedby">Designed by {{#each designers}}{{#unless @last}}{{#unless @first}}, {{/unless}}{{/unless}}{{#if @last}}{{#unless @first}} and {{/unless}}{{/if}}{{this}}{{/each}}</p>
+            <p>{{description}}</p>
+              
+    	</div>
+	    <div class="back" style="background-image: url('img/cards/card-{{id}}.svg'); background-color: {{background_color}}; ">
+	        <div class="middle">
+	        	<div class="front">
+	            	<div class="sunflower-ripple ripple-{{id}}"></div>
+	            	<div class="sunflower-button">
+	            	</div>
+            	</div>
+	        </div>          
+	    </div>
+
+	</li>
+{{/each}}

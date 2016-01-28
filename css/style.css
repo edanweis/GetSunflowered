@@ -1,0 +1,579 @@
+.noselect {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    cursor:default;
+}
+
+
+.select{
+  -webkit-touch-callout: auto !important;
+    -webkit-user-select: auto !important;
+    -khtml-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important;
+}
+
+::-moz-selection {
+  background: #fcf230; /* WebKit/Blink Browsers */
+  color: #494949;
+}
+::selection {
+  background: #fcf230; /* WebKit/Blink Browsers */
+  color: #494949;
+}
+
+
+.noevents{
+  pointer-events: none !important;
+}
+
+.events{
+  pointer-events: all !important;
+}
+
+
+html, .card-container {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	height: 100%;
+	margin:0;
+	padding:0;
+
+}
+
+i{
+  font-size: 3rem !important;
+}
+
+.padding{
+  padding: 2em;
+}
+
+nav{
+	z-index:-2;
+	background: #fff;
+	box-shadow: none;
+	position: absolute;
+	top:0px;
+	/*background-color: rgba(255,255,255,0.15);*/
+  background-color: transparent;
+  display: none;
+  pointer-events:none;
+}
+
+.navbar-fixed{
+  pointer-events:none;
+}
+
+.heading{
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  height:100vh;
+  background: transparent;
+  font-family: 'futurabtbook';
+  font-size: 2rem;
+  color: #404040;
+  z-index: 3;
+  /*background-color: #acdddb;*/
+  /*background: rgba(172,221,219, 0.8);*/
+  display: none;
+}
+
+
+.brand-logo{
+  padding-top:0;
+  margin:0 !important;
+  padding-bottom: 2em;
+  font-size: 2rem;
+  color: #404040 !important;
+  font-family:'futurabtbook';
+}
+
+#map {
+  transition-delay:1.5s;
+   -webkit-transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  /*top:-5em;*/
+  width:100%;
+  pointer-events:none;
+  position:relative;
+  height:70vh;
+  border-right: 10vw solid #fcf230;
+  border-left: 10vw solid #fcf230;
+  border-top: 10vw solid #fcf230;
+  opacity:0;
+}
+
+
+
+.mapboxgl-ctrl-bottom-right{
+  zoom:0.65 !important;
+  opacity: 0.55;
+}
+
+.mapbox-improve-map{
+  display: none;
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib{
+  background-color: transparent; 
+}
+.to-front{
+  z-index:1 !important;
+  opacity:1 !important;
+}
+
+.back{
+  position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: contain;
+     background-color: black;
+     height: 100vh;
+     z-index: 0;
+    width: 100%;
+    /*opacity: 0 !important;*/
+}
+
+.middle{
+  position: relative;
+   display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+  height: calc(100vh - 64px);
+  width: 100%;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+.front{
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  
+}
+
+
+.sunflower-button{
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  width: 22vh;
+  height: 22vh;
+  border-radius: 50%;
+  background: #fcf230;
+  background-image: url('../img/fibonacci.svg');
+  background-repeat: no-repeat;
+  background-position: 3% 3%;
+  background-size: contain;
+  cursor: pointer;
+  -webkit-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  /*display: none;*/
+}
+
+.sunflower-button::after {
+  content: "";
+  z-index: -1;
+  box-shadow: 0 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+  opacity: 0;
+  -webkit-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+.sunflower-button:hover{
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transform: scale(1.02, 1.02);
+  transform: scale(1.02, 1.02);
+}
+
+.sunflower-button:active{
+    box-shadow: none;
+      -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+
+}
+
+.sunflower-button:active::after{
+    opacity: 1;
+}
+
+.sunflower-button:hover::after {
+    opacity: 1;
+    z-index: 1;
+
+}
+
+.sunflower-ripple{
+  position: absolute;
+  display: block;
+    width:22vh;
+    height:22vh;
+    /*opacity: 0;*/
+    top:0;
+
+
+    /*border: 1px solid #000;*/
+    border-radius: 50%;
+    -webkit-transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-color: #fcf230;
+}
+.ripple-out {
+  background-color: #fcf230;
+  -webkit-transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: scale(15, 15);
+  transform: scale(15, 15);
+  opacity: 1;
+  pointer-events: none;
+
+}
+
+.ripple-in {
+  background-color: #fcf230;
+  -webkit-transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  opacity: 0;
+  pointer-events: all;
+
+}
+
+
+
+.invisible{
+    opacity: 0;
+    cursor: default !important;
+}
+
+.visible{
+  -webkit-transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 1 !important;
+  display: inherit;
+}
+
+
+
+
+.glide {
+  position: absolute !important;
+  top:0px;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+
+
+ul.glide__track{
+  padding-bottom: 0 !important;
+}
+
+.title{
+  font-family: 'futurabtmedium';
+  font-size: 1.5rem;
+  /*color:  rgba(0,0,0,.87);*/
+  padding: 0.8em 0.75em 0.3em 0.75em ;
+  vertical-align: top;
+}
+
+.id_icon{
+  position: relative;
+  display: inline-block;
+  top: -6px !important;
+  background-color: transparent;
+  border: 2px solid;
+  border-radius: 50%;
+  width: 2.3em;
+  height: 2.3em;
+  margin-right:.5em;
+  /*float:left;*/
+}
+
+
+.back_icon{
+  font-size: 3rem;
+  color: #3A3A3A;
+  margin-top:-8px;
+  /*padding-right:1.5em;*/
+  display: none;
+  color: rgba(0,0,0,.87);
+  cursor: pointer !important;
+  margin-right: -3em;
+}
+
+.id_num{
+  font-family: 'futurabtbook' !important;
+  color: white;
+  position: relative;
+  text-align: center;
+  top: 6px;
+  left: 1px;
+}
+
+.yellow{
+  background-color: #fcf230 !important;
+}
+
+.white{
+  background-color: #fff;
+}
+
+.description{
+  font-family: 'futurabtbook';
+  position: relative;
+  left: 0px;
+  padding: 0em 3em 0em 3em;
+  width: 100vw;
+  height: 100%;
+  display: none;
+  color: #323232;
+    cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.description p{
+  text-align: center;
+}
+
+.designedby{
+  font-family: 'futurabtmedium';
+  text-align: center !important;
+}
+
+.address{
+ text-align: center !important; 
+  font-family: 'futurabtmedium';
+}
+
+.black-text{
+  color: rgba(0,0,0,.87) !important;
+}
+
+.yellow-text{
+  color: #fcf230 !important;
+}
+
+.menu{
+  position: relative;
+  top:-5px;
+  color: rgba(0,0,0,0.87);
+  font-size: 0.9em;
+  display: none;
+  zoom: 1;
+}
+
+ul.dropdown-content li a{
+  font-size: 0.6em;
+  color: rgba(0,0,0,0.87);
+}
+
+ul.dropdown-content li a i{
+  position: relative;
+  font-size: 1.7rem !important;
+  top:8px;
+  margin-right: 0.2em;
+}
+
+.dropdown-content li > a, .dropdown-content li > span{
+  line-height: 16px !important;
+}
+
+.dropdown-content{
+  overflow-x:hidden !important;
+  box-shadow: none !important;
+}
+
+.gmap-icon{
+  position: relative;
+  display: inline;
+  width:31px;
+  height:30px;
+  padding:0.3em 0.4em 0em 0em;
+  /*vertical-align: middle;*/
+  left: 2px;
+  top: 5px;
+  margin: 0em 0em 0em -0.2em ;
+}
+
+.loc_enabled{
+  display: none;
+}
+
+.loc_disabled i{
+  color: rgba(0,0,0,0.37);
+}
+
+
+.added{
+  position: absolute;
+  width: 90%;
+  height: 28px;
+}
+
+.add{
+  position: absolute;
+  /*background-color: red;*/
+  width: 90%;
+  height: 28px;
+}
+span.add::after{
+  content: "Add to route";
+}
+
+span.add::before{
+  position: relative;
+  content: "";
+  color: #6165FF;
+  padding-right: 0.35em;
+  font-size: 2em;
+  top:6px;
+  font-family: 'Material-Design-Icons';
+}
+
+
+span.added::after{
+  content: "added";
+}
+
+span.added::before{
+  position: relative;
+  content: "";
+  font-size: 2em;
+  color:#00B247;
+  padding-right: 0.35em;
+  top:6px;
+  font-family: 'Material-Design-Icons';
+}
+
+.added-delayed:hover{
+  
+}
+
+.added-delayed:hover::after{
+content: "remove";
+}
+
+.added-delayed:hover::before{
+  position: relative;
+  content: "";
+  font-size: 2em;
+  color:#FF5028;
+  padding-right: 0.35em;
+  top:6px;
+  font-family: 'Material-Design-Icons';
+}
+
+
+@media only screen and (max-width: 435px) {
+  .title{
+    zoom: 0.75;
+  }
+  .menu{
+    zoom: 1 !important;
+  }
+
+  .description{
+    font-size: 0.9em;
+    line-height: 1.2em;
+  }
+}
+
+
+@media only screen and (min-width: 912px) {
+  .description{
+    font-size: 1.4em;
+    line-height: 1.2em;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'futurabtbook';
+    src: url('../font/futura/futurabtbook.eot');
+    src: url('../font/futura/futurabtbook.eot') format('embedded-opentype'),
+         url('../font/futura/futurabtbook.woff2') format('woff2'),
+         url('../font/futura/futurabtbook.woff') format('woff'),
+         url('../font/futura/futurabtbook.ttf') format('truetype'),
+         url('../font/futura/futurabtbook.svg#futurabtbook') format('svg');
+}
+
+@font-face {
+    font-family: 'futurabtmedium';
+    src: url('../font/futura/futurabtmedium.eot');
+    src: url('../font/futura/futurabtmedium.eot') format('embedded-opentype'),
+         url('../font/futura/futurabtmedium.woff2') format('woff2'),
+         url('../font/futura/futurabtmedium.woff') format('woff'),
+         url('../font/futura/futurabtmedium.ttf') format('truetype'),
+         url('../font/futura/futurabtmedium.svg#futurabtmedium') format('svg');
+}
+
+@font-face {
+    font-family: 'futurabtmediumitalic';
+    src: url('../font/futura/futurabtmediumitalic.eot');
+    src: url('../font/futura/futurabtmediumitalic.eot') format('embedded-opentype'),
+         url('../font/futura/futurabtmediumitalic.woff2') format('woff2'),
+         url('../font/futura/futurabtmediumitalic.woff') format('woff'),
+         url('../font/futura/futurabtmediumitalic.ttf') format('truetype'),
+         url('../font/futura/futurabtmediumitalic.svg#futurabtmediumitalic') format('svg');
+}
+
+
+
+
+
+
+
+
+
+
+
+

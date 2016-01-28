@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#fff">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#fff">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+
+    <link href='css/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/glide.core.min.css">
+    <link rel="stylesheet" href="css/glide.theme.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<script src='mapbox-gl.js'></script>
+<script src="firebase.js"></script>
+<script src="jquery.min.js"></script>
+<script src="materialize.min.js"></script>
+<script src="glide.min.js"></script>
+<!-- <script src="handlebars.runtime-v4.0.5.js"></script> -->
+<script src="handlebars-v4.0.5.js"></script>
+<script src="swag.js"></script>
+<script>Swag.registerHelpers(window.Handlebars);</script>
+<script src="templates/sites.js"></script>
+<script src="data.json" type="text/javascript" language="javascript"></script>
+
+<body> 
+    <div id="glide" class="glide">
+        <div class="glide__wrapper">
+            <ul class="glide__track">     
+            <!-- handlebars template context goes here -->    
+            </ul>
+            <div id="map"></div>
+        </div>
+    </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+
+        $(window).click(function(e){
+            // console.log(e.target)
+        })
+
+        // init handlebars template
+        var template = Handlebars.templates['sites']
+        var html  = template(context);
+        $('.glide__track').html(html);
+
+        Swag.registerHelpers(Handlebars);
+
+        // init slider
+
+        var glide = $("#glide").glide({
+            type: "slider",
+            autoplay: false
+        });
+
+        var glide_api = $("#glide").data('glide_api');
+        var currentSlide = glide_api.current();
+        var mapEnabled = false;
+        var loc_enabled = false;
+        var route = [];
+
+        glide.on("swipeEnd.glide", function(event, data) {
+            currentSlide = glide_api.current();
+            flyToSite(currentSlide);
+        });
+
+
+        //event functions
+
+        $(".sunflower-button").click(function() {
+            mapEnabled = true;
+            enableMap();
+        })
+
+        $(".ripple-"+currentSlide).on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",
+         function(e){
+            if (mapEnabled == true){
+                $('.back').hide();
+                $('.description').css("display", "block");
+                $('nav').toggleClass("yellow");
+                $('.glide').toggleClass("yellow");
+                $('.glide__slide').toggleClass("yellow")
+                $('#map').toggleClass("visible").css("pointer-events", "all");
+                $('.id_num').toggleClass("yellow-text");
+                $('.back_icon, .menu').show("slow");
+            }
+         })
+
+        function enableMap(){
+            $('.sunflower-ripple').toggleClass("ripple-out")
+            $('.sunflower-button').toggleClass("invisible"); //.delay( 500 ).fadeTo(0,0);
+            $('.description').toggleClass("invisible"); //.delay( 500 ).fadeTo(0,0);
+            $('.back_icon, .menu').show("slow");
+            $('.description').toggleClass("visible fadeIn");
+        }
+
+
+        function disableMap(){
+           
+            $('.back').show(0, function() {
+                $('.sunflower-ripple').toggleClass("ripple-out");
+              });
+            $('nav').toggleClass("yellow");
+            $('.description').toggleClass("visible fadeIn");
+            $('.glide').toggleClass("yellow");
+            $('#map').toggleClass("visible").css("pointer-events", "none");
+            $('.sunflower-button').toggleClass("invisible");
+            $('.glide__slide').toggleClass("yellow");
+            $('.description').css("display", "none");
+            $('.id_num').toggleClass("yellow-text");
+
+            $('.back_icon, .menu').hide();
+            $('.id_icon').show("fast");
+
+        }
+
+
+        $('.back_icon').click(function(){
+            mapEnabled = false;
+            disableMap();
+        })
+
+
+        $('.add').click(function(){
+            console.log(route.indexOf(currentSlide));
+            var index = route.indexOf(currentSlide);
+            
+            if(index <= -1){
+                route.push(currentSlide);
+                console.log("added: "+currentSlide);
+                $(this).mouseout(function(){
+                    $(this).addClass('added-delayed');
+                })
+            } else{
+                console.log("removed: "+currentSlide)
+                route.splice(index, 1); 
+                $(this).removeClass('added-delayed');
+                $(this).unbind('mouseout');
+            }
+
+            $(this).toggleClass("added");
+
+
+        })
+
+
+
+        $('.getroute').click(function(){
+            console.log(route);
+        })
+
+        $('.dropdown-button').dropdown({
+          inDuration: 300,
+          outDuration: 225,
+          constrain_width: false, // Does not change width of dropdown to that of the activator
+          hover: true, // Activate on hover
+          gutter: 0, // Spacing from edge
+          belowOrigin: false, // Displays dropdown below the button
+          alignment: 'right' // Displays dropdown with edge aligned to the left of button
+        }
+        );
+          
+
+        $('.mylocation').click(function() {
+            if (loc_enabled == false){
+                $('.loc_enabled').show();
+                $('.loc_disabled').hide();
+                trackMe();
+            } else {
+                stopTracking();
+                loc_enabled = false;
+                $('.loc_enabled').hide();
+                $('.loc_disabled').show();
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+        // init mapbox
+
+        var ref = new Firebase("https://getsunflowered.firebaseio.com/");
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZWRhbndlaXMiLCJhIjoiY2lmMTVtdWQ0MDRsOHNkbTV2OXd3cDNwNiJ9.MxWj73wGNEvrPSjsh6TJjw';
+
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/edanweis/cijeagq2s00dh0altk7fewog0', //stylesheet location
+            center: [144.9879279, -37.7495266], // starting position
+            zoom: 20 // starting zoom
+        });
+
+        var watchID;
+        var position;
+        var first_fly = true;
+
+        var geo_options = {
+            enableHighAccuracy: true,
+            maximumAge: Infinity,
+            timeout: 60000
+        };
+
+
+        var source = new mapboxgl.GeoJSONSource({
+            data: {
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [53.617932690157893, 37.222743529038652]
+                },
+                "type": "Feature",
+                "properties": {}
+            }
+        });
+
+        // console.log(source);
+
+        map.on('style.load', function() {
+            map.addSource('user_location', source);
+            map.addLayer({
+                "id": "user_location",
+                "type": "symbol",
+                "source": "user_location",
+                "layout": {
+                    "icon-image": "pin",
+                }
+            });
+
+        });
+
+        //when firebase detects gps in other users, 
+        //push their locations?
+
+
+        
+
+
+        map.on('click', function (e) {
+            // Use featuresAt to get features within a given radius of the click event
+            // Use layer option to avoid getting results from other layers
+            map.featuresAt(e.point, {layer: 'GetSunflowered Sites (edit at geojson.io)', radius: 10, includeGeometry: true}, function (err, features) {
+                if (err) throw err;
+                // if there are features within the given radius of the click event,
+                // fly to the location of the click event
+                if (features.length) {
+                    // Get coordinates from the symbol and center the map on those coordinates
+                    map.flyTo({center: features[0].geometry.coordinates});
+                    // console.log(features[0].properties.id)
+                    glide_api.go("="+features[0].properties.id)
+                }
+            });
+        });
+
+
+        // Use the same approach as above to indicate that the symbols are clickable
+        // by changing the cursor style to 'pointer'.
+        map.on('mousemove', function (e) {
+            map.featuresAt(e.point, {layer: 'GetSunflowered Sites (edit at geojson.io)', radius: 10}, function (err, features) {
+                if (err) throw err;
+                map.getCanvas().style.cursor = features.length ? 'pointer' : '';
+            });
+        });
+
+
+
+        
+
+
+        function updateGeoData(position) {
+            source.setData({
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [position.coords.longitude, position.coords.latitude]
+                },
+                "type": "Feature",
+                "properties": {}
+            });
+            ref.set({
+                "lat": position.coords.latitude,
+                "lng": position.coords.longitude,
+            });
+
+        };
+
+        function geo_success(position) {
+            loc_enabled = true;
+            updateGeoData(position);
+            if (first_fly == true) {
+                fly(position);
+                first_fly = false;
+            };
+        };
+
+        function geo_error(error) {
+            alert('ERROR(' + error.code + '): ' + error.message);
+        }
+
+        function trackMe() {
+
+            if ("geolocation" in navigator) {
+                watchID = navigator.geolocation.watchPosition(geo_success, geo_error, geo_options);
+            } else {
+                // alert("Sorry you don't have geo");
+            }
+        }
+
+        function stopTracking() {
+            navigator.geolocation.clearWatch(watchID);
+        }
+
+        //keeping two fly functions, because I couldn't get the default easing right.
+        function flyToSite(index){
+            map.flyTo({
+                center: [
+                    context.sites[index-1].coordinates_latlng[1],
+                    context.sites[index-1].coordinates_latlng[0]]
+            });
+        }
+
+        function fly(position) {
+            map.flyTo({
+                center: [
+                    position.coords.longitude,
+                    position.coords.latitude
+                ],
+                zoom: 20,
+                bearing: 0,
+                // These options control the flight curve, making it move
+                // slowly and zoom out almost completely before starting
+                // to pan.
+                speed: 1.5, // make the flying slow
+                curve: 1, // change the speed at which it zooms out
+                // This can be any easing function: it takes a number between
+                // 0 and 1 and returns another number between 0 and 1.
+                easing: function(t) {
+                    return t;
+                }
+            });
+        }
+
+
+
+
+
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+var context = {
+    sites: [
+        {
+            id: 1,
+            title: "TILTED HILL",
+            description: "",
+            address: "4 Fowler Street Moe", 
+            coordinates_latlng: [-38.1777054,146.2607404],
+            designers: ["Ben Morrison"],
+            status: "some status",
+            background_color: "#addddc",
+            marker_color: "#7d56a3",
+            url: "http://www.getsunflowered.com",
+            hidden: false,
+        },
+        {
+            id: 2,
+            title: "DROPS OF SUNSHINE",
+            description: "The clouds have parted, the storm has passed, and the hill is beaming in suspended animation, soaked in nourishing drops of sunshine. Wander up a path to discover a place of calm and quiet reflection, where gentle curves and sweet aromas cleanse the soul. When you reach the centre, take off your shoes, touch the earth and bask in the golden glow.",
+            address: "94 – 96 Narracan Drive, Moe", 
+            former_site_description: "Hospital",
+            coordinates_latlng: [-38.1821305,146.2766924],
+            designers: ["karres+brands"],
+            status: "",
+            background_color: "#97abd8",
+            marker_color: "#97abd8",
+            url: "http://www.getsunflowered.com",
+            hidden: false,
+        },
+        {
+            id: 3,
+            title: "SHAPE SHIFTER",
+            description: "Come and explore the strangely familiar. As you wander toward the centre of each planting discover various shapes of sunflowers that conceal square rooms, rectangular passages and arc-shaped voids within them. This design is about legibility, identity and familiarity.",
+            address: "Corner North & Mills Road Yallourn North", 
+            former_site_description: "",
+            coordinates_latlng: [-38.1560069,146.3477756],
+            designers: ["karres+brands"],
+            status: "",
+            background_color: "#a4d0ef",
+            marker_color: "#009ad9",
+            url: "http://www.getsunflowered.com",
+            hidden: false,
+        },
+
+    ]
+}
