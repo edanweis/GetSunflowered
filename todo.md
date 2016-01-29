@@ -1,28 +1,19 @@
 Bugs
 ===
 
-flyto offset
-description gap
-Dropdown offset and wrong zoom
-Sunflower close offset
-disable added:hover::after on mobile
-Slow speed
-
+Map flying function is offset on mobile
+Gap underneath Description
+Dropdown menu is offset on mobile and too small
+Sunflower button retracts offset
+Slider is slow on mobile devices.
 
 
 Todo
 ===
-Todo loading css on map
+Social Login/Logout
+loading icon for map
 Expand map to full screen
-Status
-Add to route
-Responsive text size
+Status of site.
 More info link
-View in Google maps
 Get directions on Google Maps
-GIT commit.
-Social Login.
-Logout
-Crowd tracking.
-minify
-obfuscate
+Crowd tracking

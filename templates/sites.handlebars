@@ -1,6 +1,11 @@
 {{!-- {{to generate template: `handlebars sites.handlebars -f sites.js` in your templates directory }} --}}
 
 {{#each sites}}
+    {{#if hidden}}
+
+    {{ else }}
+
+    
 	<li class="glide__slide">
 	    
     	<div class="title center noselect" style="color: {{marker_color}}"> 
@@ -13,12 +18,12 @@
     		<span class="title-text">{{title}}</span>
             <!-- <span class="right add-to-route"><i class="material-icons">more_vert</i></span> -->
               <!-- Dropdown Trigger -->
-          <a class='dropdown-button right menu' href='#' data-activates='dropdown{{id}}'><i class="material-icons">expand_more</i></a>
+          <a class='dropdown-button right menu' href='#' data-activates='dropdown{{id}}'><i class="material-icons">menu</i></a>
 
           <!-- Dropdown Structure -->
           <ul id='dropdown{{id}}' class='dropdown-content'>
-            <li class=""><a href="#!" class="addtoroute"><span class="add"></span></a></li>
-            <li><a href="#!" class="getroute"><img src="img/gmap.png" class="gmap-icon"> Directions</a></li>
+            <li class=""><a href="#!" class="addtoroute"><span class="add"></span></a></li>
+            <li class="GoogleDirectionsModal disabled"><a href="#GoogleDirections" modal-trigger class="getroute"><img src="img/gmap.png" class="gmap-icon"/> Get Directions</a></li>
             <li><a href="#!" class="mylocation" ><span class="loc_enabled"><i class="material-icons">my_location</i> GPS enabled</span><span class="loc_disabled"><i class="material-icons">location_disabled</i> GPS disabled</span></a></li>
             <li><a href="#!" class="logout" ><i class="material-icons">power_settings_new</i> Logout</a></li>
           </ul>
@@ -41,4 +46,5 @@
 	    </div>
 
 	</li>
+    {{/if}}
 {{/each}}

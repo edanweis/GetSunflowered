@@ -33,6 +33,7 @@
 <script src="data.json" type="text/javascript" language="javascript"></script>
 
 <body> 
+    
     <div id="glide" class="glide">
         <div class="glide__wrapper">
             <ul class="glide__track">     
@@ -41,7 +42,20 @@
             <div id="map"></div>
         </div>
     </div>
-    </div>
+
+         <!-- Modal Structure -->
+      <div id="GoogleDirections" class="modal bottom-sheet">
+      <a class="google-link" href="" target="_blank">
+        <div class="modal-content">
+          <h4><img src="img/gmap.png" class="gmap-icon-route"/> Open in Google Maps</h4>
+          <div class="route_calc"></div>
+        </div>
+        </a>
+      </div>
+
+   
+    
+
     <script>
     $(document).ready(function() {
 
@@ -97,18 +111,21 @@
          })
 
         function enableMap(){
-            $('.sunflower-ripple').toggleClass("ripple-out")
+            $('.sunflower-ripple').addClass("ripple-out")
             $('.sunflower-button').toggleClass("invisible"); //.delay( 500 ).fadeTo(0,0);
             $('.description').toggleClass("invisible"); //.delay( 500 ).fadeTo(0,0);
             $('.back_icon, .menu').show("slow");
             $('.description').toggleClass("visible fadeIn");
+            flyToSite(currentSlide);
         }
 
 
         function disableMap(){
            
             $('.back').show(0, function() {
-                $('.sunflower-ripple').toggleClass("ripple-out");
+                // console.log("callback after .back is shown")
+                setTimeout(function(){$('.sunflower-ripple').removeClass("ripple-out");},100);
+                
               });
             $('nav').toggleClass("yellow");
             $('.description').toggleClass("visible fadeIn");
@@ -121,6 +138,7 @@
 
             $('.back_icon, .menu').hide();
             $('.id_icon').show("fast");
+            map.setZoom(zoom_level);
 
         }
 
@@ -132,21 +150,29 @@
 
 
         $('.add').click(function(){
-            console.log(route.indexOf(currentSlide));
+            // console.log(route.indexOf(currentSlide));
             var index = route.indexOf(currentSlide);
             
             if(index <= -1){
                 route.push(currentSlide);
-                console.log("added: "+currentSlide);
+                // console.log("added: "+currentSlide);
                 $(this).mouseout(function(){
                     $(this).addClass('added-delayed');
                 })
+
             } else{
-                console.log("removed: "+currentSlide)
+                // console.log("removed: "+currentSlide)
                 route.splice(index, 1); 
                 $(this).removeClass('added-delayed');
                 $(this).unbind('mouseout');
             }
+
+            if (route.length > 0){
+                     $('.GoogleDirectionsModal').removeClass('disabled');
+                } else{
+                    $('.GoogleDirectionsModal').addClass('disabled');
+                }
+            
 
             $(this).toggleClass("added");
 
@@ -156,7 +182,22 @@
 
 
         $('.getroute').click(function(){
-            console.log(route);
+            // console.log(route);
+            var result = "";
+            // for (var i = 0; i < route; i++) {
+            //     console.log("adding "+route[i] +"to your route");
+            //     result += context.sites[route.indexOf(i)].title
+            // }
+            route.forEach(function (item, index, array) {
+              // console.log(item, index);
+              result += "<li class='route-li' style='background-image: url(img/numbers/"+ context.sites[item-1].id +".svg)'></li><i class='route-arrow material-icons'>keyboard_backspace</i>"
+            });
+
+            $('.route_calc').html("<ul class='route-ul'>"+result+"</ul>");
+
+            $('.google-link').attr('href', googleURL());
+
+
         })
 
         $('.dropdown-button').dropdown({
@@ -173,27 +214,54 @@
 
         $('.mylocation').click(function() {
             if (loc_enabled == false){
-                $('.loc_enabled').show();
-                $('.loc_disabled').hide();
                 trackMe();
             } else {
-                stopTracking();
                 loc_enabled = false;
                 $('.loc_enabled').hide();
                 $('.loc_disabled').show();
+                stopTracking();
             }
         });
 
 
 
 
+          $('.getroute').leanModal({
+              dismissible: true, // Modal can be dismissed by clicking outside of the modal
+              opacity: 0, // Opacity of modal background
+              in_duration: 300, // Transition in duration
+              out_duration: 200, // Transition out duration
+              ready: function() { }, // Callback for Modal open
+              complete: function() { } // Callback for Modal close
+            }
+          );
 
 
 
 
+
+        // helpers
+
+        function googleURL(){
+            var url = "https://www.google.com/maps/dir/Current+Location";
+            route.forEach(function (item, index, array) {
+                url = url.concat("/"+ context.sites[item-1].coordinates_latlng[0] +','+ context.sites[item-1].coordinates_latlng[1] )
+                });
+            // for (var i = 0; i < routes.length; i++) {
+            //         url = url.concat("/"+journey[i].getLatLng().lat+','+journey[i].getLatLng().lng)
+            //     }
+            return url
+        }
 
 
         // init mapbox
+
+        
+
+        var watchID;
+        var position;
+        var first_fly = true;
+        var zoom_level = 18;
 
         var ref = new Firebase("https://getsunflowered.firebaseio.com/");
         mapboxgl.accessToken = 'pk.eyJ1IjoiZWRhbndlaXMiLCJhIjoiY2lmMTVtdWQ0MDRsOHNkbTV2OXd3cDNwNiJ9.MxWj73wGNEvrPSjsh6TJjw';
@@ -201,13 +269,11 @@
         var map = new mapboxgl.Map({
             container: 'map', // container id
             style: 'mapbox://styles/edanweis/cijeagq2s00dh0altk7fewog0', //stylesheet location
-            center: [144.9879279, -37.7495266], // starting position
-            zoom: 20 // starting zoom
+            center: [144.9613418,-37.8148271], // starting position
+            zoom: zoom_level // starting zoom
         });
 
-        var watchID;
-        var position;
-        var first_fly = true;
+        
 
         var geo_options = {
             enableHighAccuracy: true,
@@ -261,6 +327,7 @@
                     map.flyTo({center: features[0].geometry.coordinates});
                     // console.log(features[0].properties.id)
                     glide_api.go("="+features[0].properties.id)
+
                 }
             });
         });
@@ -297,20 +364,24 @@
         };
 
         function geo_success(position) {
+            $('.loc_enabled').show();
+            $('.loc_disabled').hide();
             loc_enabled = true;
             updateGeoData(position);
-            if (first_fly == true) {
+            // if (first_fly == true) {
                 fly(position);
-                first_fly = false;
-            };
+                // first_fly = false;
+            // };
         };
 
         function geo_error(error) {
-            alert('ERROR(' + error.code + '): ' + error.message);
+            $('.loc_enabled').hide();
+            $('.loc_disabled').show();
+             Materialize.toast('Please turn on location services for GPS tracking', 4000)
         }
 
         function trackMe() {
-
+            // console.log("tracking you")
             if ("geolocation" in navigator) {
                 watchID = navigator.geolocation.watchPosition(geo_success, geo_error, geo_options);
             } else {
@@ -320,6 +391,12 @@
 
         function stopTracking() {
             navigator.geolocation.clearWatch(watchID);
+            try{
+                map.removeLayer("user_location");
+            }
+            catch(e){
+
+                }
         }
 
         //keeping two fly functions, because I couldn't get the default easing right.
@@ -327,7 +404,20 @@
             map.flyTo({
                 center: [
                     context.sites[index-1].coordinates_latlng[1],
-                    context.sites[index-1].coordinates_latlng[0]]
+                    context.sites[index-1].coordinates_latlng[0]
+                ],
+                zoom: zoom_level,
+                bearing: 0,
+                // These options control the flight curve, making it move
+                // slowly and zoom out almost completely before starting
+                // to pan.
+                speed: 1.5, // make the flying slow
+                curve: 1, // change the speed at which it zooms out
+                // This can be any easing function: it takes a number between
+                // 0 and 1 and returns another number between 0 and 1.
+                easing: function(t) {
+                    return t;
+                }
             });
         }
 
@@ -337,7 +427,7 @@
                     position.coords.longitude,
                     position.coords.latitude
                 ],
-                zoom: 20,
+                zoom: zoom_level,
                 bearing: 0,
                 // These options control the flight curve, making it move
                 // slowly and zoom out almost completely before starting

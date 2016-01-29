@@ -38,14 +38,15 @@
 
 
 html, .card-container {
-	height: 100%;
-	overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-	height: 100%;
-	margin:0;
-	padding:0;
+  height: 100%;
+  margin:0;
+  padding:0;
+  overflow: hidden;
 
 }
 
@@ -58,12 +59,12 @@ i{
 }
 
 nav{
-	z-index:-2;
-	background: #fff;
-	box-shadow: none;
-	position: absolute;
-	top:0px;
-	/*background-color: rgba(255,255,255,0.15);*/
+  z-index:-2;
+  background: #fff;
+  box-shadow: none;
+  position: absolute;
+  top:0px;
+  /*background-color: rgba(255,255,255,0.15);*/
   background-color: transparent;
   display: none;
   pointer-events:none;
@@ -104,16 +105,14 @@ nav{
   transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
   /*top:-5em;*/
   width:100%;
+  height: 70vh;
   pointer-events:none;
-  position:relative;
-  height:70vh;
-  border-right: 10vw solid #fcf230;
-  border-left: 10vw solid #fcf230;
-  border-top: 10vw solid #fcf230;
+  border-right: 5vw solid #fcf230;
+  border-left: 5vw solid #fcf230;
+  border-top: 0vw solid #fcf230;
   opacity:0;
+  top:0em;
 }
-
-
 
 .mapboxgl-ctrl-bottom-right{
   zoom:0.65 !important;
@@ -243,14 +242,14 @@ nav{
 
     /*border: 1px solid #000;*/
     border-radius: 50%;
-    -webkit-transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     background-color: #fcf230;
 }
 .ripple-out {
   background-color: #fcf230;
-  -webkit-transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transform: scale(15, 15);
   transform: scale(15, 15);
   opacity: 1;
@@ -329,7 +328,7 @@ ul.glide__track{
   margin-top:-8px;
   /*padding-right:1.5em;*/
   display: none;
-  color: rgba(0,0,0,.87);
+  color: rgba(0,0,0,.60);
   cursor: pointer !important;
   margin-right: -3em;
 }
@@ -391,10 +390,11 @@ ul.glide__track{
 .menu{
   position: relative;
   top:-5px;
-  color: rgba(0,0,0,0.87);
+  color: rgba(0,0,0,0.60);
   font-size: 0.9em;
   display: none;
-  zoom: 1;
+  zoom: auto;
+
 }
 
 ul.dropdown-content li a{
@@ -416,6 +416,7 @@ ul.dropdown-content li a i{
 .dropdown-content{
   overflow-x:hidden !important;
   box-shadow: none !important;
+  zoom: auto;
 }
 
 .gmap-icon{
@@ -429,6 +430,42 @@ ul.dropdown-content li a i{
   top: 5px;
   margin: 0em 0em 0em -0.2em ;
 }
+
+.gmap-icon-route{
+  position: relative;
+  display: inline;
+  /*width:145px;*/
+  height:60px;
+  width: auto;
+  padding:0em 0.5em 0em 0em;
+  /*float:left;*/
+
+  /*vertical-align: middle;*/
+  /*left: 2px;*/
+  top: 15px;
+  margin: 0em 0em 0em 0em ;
+}
+
+#GoogleDirections a{
+  color: rgba(0,0,0,0.7);
+}
+
+#GoogleDirections a:hover{
+  color: #039be5;
+  /*text-decoration: underline;;*/
+}
+
+li.disabled a, li.disabled a img {
+  pointer-events: none !important;
+  cursor: default !important;
+  opacity:0.4;
+}
+
+li.disabled:hover{
+  background-color: inherit !important;
+  cursor: default !important;
+}
+
 
 .loc_enabled{
   display: none;
@@ -447,7 +484,6 @@ ul.dropdown-content li a i{
 
 .add{
   position: absolute;
-  /*background-color: red;*/
   width: 90%;
   height: 28px;
 }
@@ -467,7 +503,7 @@ span.add::before{
 
 
 span.added::after{
-  content: "added";
+  content: "Added";
 }
 
 span.added::before{
@@ -485,7 +521,7 @@ span.added::before{
 }
 
 .added-delayed:hover::after{
-content: "remove";
+content: "Remove";
 }
 
 .added-delayed:hover::before{
@@ -494,22 +530,82 @@ content: "remove";
   font-size: 2em;
   color:#FF5028;
   padding-right: 0.35em;
-  top:6px;
+  top:9px;
   font-family: 'Material-Design-Icons';
 }
+
+h4{
+  font-family: 'futurabtmedium';
+  color: rgba(0,0,0,0.75);
+  line-height: 1.5em;
+}
+
+.route-ul{
+  list-style-type: none;
+  margin-left:5em;  
+}
+
+.route-li{
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+  font-size: 0.8em;
+  color: black;
+  margin:0.5em;
+  white-space:nowrap;
+  /*padding: 1em 1em 1em 1em;*/
+  /*float:left;*/
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.route-arrow{
+  color: rgba(0,0,0,0.75);
+  position: relative;
+  top:-0.3em;
+  font-size: 2.4em !important;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (max-width: 435px) {
   .title{
     zoom: 0.75;
   }
-  .menu{
-    zoom: 1 !important;
+  .menu, .dropdown-content{
+    zoom: 1.333 !important;
   }
 
   .description{
     font-size: 0.9em;
     line-height: 1.2em;
+  }
+
+  .gmap-icon-route{
+    height: 40px;
+    top:12px;
+  }
+
+  h4{
+    font-size: 1.2em !important;
   }
 }
 
