@@ -405,6 +405,13 @@ ul.glide__track{
 
 }
 
+
+
+ul.dropdown-content{
+  position: absolute !important;
+  z-index: 999 !important;
+}
+
 ul.dropdown-content li a{
   font-size: 0.6em;
   color: rgba(0,0,0,0.87);
@@ -580,13 +587,9 @@ h4{
   transform: rotate(180deg);
 }
 
-
-
-
-
-
-
-
+.title-text{
+  letter-spacing: 0.1em;
+}
 
 
 
@@ -624,6 +627,9 @@ h4{
     font-size: 1.4em !important;
     margin-top: 3px !important;
   }
+  .title-text{
+    letter-spacing: 0;
+  }
 }
 
 
@@ -637,6 +643,9 @@ h4{
     font-size: 7rem !important;
   }
 
+  .title-text{
+    letter-spacing: 0.2em !important
+  }
 }
 
 

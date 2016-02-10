@@ -219,6 +219,15 @@
           alignment: 'right' // Displays dropdown with edge aligned to the left of button
         }
         );
+
+        $('.dropdown-content').hover(function(){
+            $('.glide__arrow.next').hide();
+                console.log('hide right')
+            }, 
+            function(){
+                $('.glide__arrow.next').show();
+            }
+        );
           
 
         $('.mylocation').click(function() {
