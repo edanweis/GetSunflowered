@@ -40,6 +40,12 @@
             <!-- handlebars template context goes here -->    
             </ul>
             <div id="map"></div>
+<!--             
+            <i class="material-icons next">navigate_next</i> -->
+            <div class="glide__arrows">
+                <button class="glide__arrow prev" data-glide-dir="<"><i class="material-icons">navigate_before</i></button>
+                <button class="glide__arrow next" data-glide-dir=">"><i class="material-icons">navigate_next</i></button>
+            </div>
         </div>
     </div>
 
@@ -148,6 +154,9 @@
             disableMap();
         })
 
+        $('.next').click(function(){
+
+        })
 
         $('.add').mousedown(function(){
             // console.log(route.indexOf(currentSlide));

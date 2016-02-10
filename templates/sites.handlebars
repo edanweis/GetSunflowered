@@ -29,12 +29,14 @@
           </ul>
 
     	</div>
-    	<div class="description animated invisible">
-        <p class="address">{{address}}</p>
-            <p class="designedby">Designed by {{#each designers}}{{#unless @last}}{{#unless @first}}, {{/unless}}{{/unless}}{{#if @last}}{{#unless @first}} and {{/unless}}{{/if}}{{this}}{{/each}}</p>
-            <p>{{description}}</p>
-              
-    	</div>
+        
+            <div class="description animated invisible">
+            <p class="address">{{address}}</p>
+                <p class="designedby">Designed by {{#each designers}}{{#unless @last}}{{#unless @first}}, {{/unless}}{{/unless}}{{#if @last}}{{#unless @first}} and {{/unless}}{{/if}}{{this}}{{/each}}</p>
+                <p>{{description}}</p>
+                  
+            
+        </div>
 	    <div class="back" style="background-image: url('img/cards/card-{{id}}.svg'); background-color: {{background_color}}; ">
 	        <div class="middle">
 	        	<div class="front">

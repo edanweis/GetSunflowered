@@ -50,6 +50,13 @@ body {
 
 }
 
+
+.glide__arrow i{
+  font-size: 5rem !important;
+}
+
+
+
 i{
   font-size: 3rem !important;
 }
@@ -106,8 +113,8 @@ nav{
   /*top:-5em;*/
   width:100%;
   pointer-events:none;
-  border-right: 5vw solid #fcf230;
-  border-left: 5vw solid #fcf230;
+  border-right: 2vw solid #fcf230;
+  border-left: 2vw solid #fcf230;
   border-top: 0vw solid #fcf230;
   opacity:0;
   top:0em;
@@ -354,8 +361,8 @@ ul.glide__track{
   font-family: 'futurabtbook';
   position: relative;
   left: 0px;
-  padding: 0em 3em 0em 3em;
-  width: 100vw;
+  padding: 0em 1em 0em 1em;
+  width: 70vw;
   height: 100%;
   display: none;
   color: #323232;
@@ -363,6 +370,7 @@ ul.glide__track{
   cursor: grab;
   cursor: -moz-grab;
   cursor: -webkit-grab;
+  margin: 0 auto;
 }
 
 .description p{
@@ -604,8 +612,17 @@ h4{
     top:12px;
   }
 
+  .glide__arrow i{
+    font-size: 3rem !important;
+  }
+
   h4{
     font-size: 1.2em !important;
+  }
+
+  .dropdown-button i{
+    font-size: 1.4em !important;
+    margin-top: 3px !important;
   }
 }
 
@@ -615,6 +632,11 @@ h4{
     font-size: 1.4em;
     line-height: 1.2em;
   }
+
+  .glide__arrow i{
+    font-size: 7rem !important;
+  }
+
 }
 
 

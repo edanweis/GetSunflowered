@@ -6,9 +6,9 @@
   position: absolute;
 }
 .glide--horizontal .glide__arrows {
-  top: 50%;
-  width: 92%;
-  margin-left: 4%;
+  top: 30%;
+  width: 96%;
+  margin-left: 2%;
 }
 .glide--vertical .glide__arrows {
   left: 50%;
@@ -17,19 +17,27 @@
 }
 .glide__arrow {
   position: absolute;
+  border: none;
   z-index: 2;
-  color: white;
+  padding: 0;
+  color: rgba(0,0,0,0.15);
+  /*color: white;*/
+  /*background-color: #fcf230;*/
   text-transform: uppercase;
   font: 11px Arial, sans-serif;
-  padding: 9px 12px;
+  /*padding: 9px 12px;*/
   background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
+  /*border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;*/
   -webkit-transition: border 300ms ease-in-out;
           transition: border 300ms ease-in-out;
 }
 .glide__arrow:focus {
   outline: none;
+  background-color: transparent;
+}
+.glide__arrow:active {
+  background-color: white !important;
 }
 .glide__arrow:hover {
   border-color: white;
@@ -109,5 +117,6 @@
           transition: opacity 150ms ease;
 }
 .glide--slider .glide__arrow.disabled {
-  opacity: 0.33;
+  opacity: 0;
+  pointer-events: none;
 }
