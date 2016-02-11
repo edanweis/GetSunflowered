@@ -241,7 +241,7 @@ var context = {
         ""
         ],
         "status": "",
-        "background_color": "#72C7AA",
+        "background_color": "#A5DFF9",
         "marker_color": "#72C7AA",
         "url": "http://www.getsunflowered.com",
         "hidden": false
