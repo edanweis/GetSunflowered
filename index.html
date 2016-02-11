@@ -94,7 +94,26 @@
             flyToSite(currentSlide);
         });
 
+        $('.glide__arrow').click(function(){
+            triggerSlide();
+        })
 
+
+        $("body").keydown(function(e) {
+          if(e.keyCode == 37) { // left
+           triggerSlide();
+          }
+          else if(e.keyCode == 39) { // right
+           triggerSlide();
+          }
+        });
+
+        function triggerSlide(){
+            window.setTimeout(function() {
+                currentSlide = glide_api.current();
+                flyToSite(currentSlide);    
+            }, 200);
+        }
         //event functions
 
         $(".sunflower-button").click(function() {
