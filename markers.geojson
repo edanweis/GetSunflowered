@@ -1,0 +1,225 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "title": "TILTED HILL",
+        "description": "",
+        "address": "4 Fowler Street Moe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.2607404,
+          -38.1777054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "title": "DROPS OF SUNSHINE",
+        "description": "The clouds have parted, the storm has passed, and the hill is beaming in suspended animation, soaked in nourishing drops of sunshine. Wander up a path to discover a place of calm and quiet reflection, where gentle curves and sweet aromas cleanse the soul. When you reach the centre, take off your shoes, touch the earth and bask in the golden glow.",
+        "address": "94 – 96 Narracan Drive, Moe",
+        "former_site_description": "Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.2766924,
+          -38.1821305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "title": "SHAPE SHIFTER",
+        "description": "Come and explore the strangely familiar. As you wander toward the centre of each planting discover various shapes of sunflowers that conceal square rooms, rectangular passages and arc-shaped voids within them. This design is about legibility, identity and familiarity.",
+        "address": "Corner North & Mills Road Yallourn North",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.3477756,
+          -38.1560069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "title": "COCKTAIL",
+        "description": "Feeling blue about your garden? Are you green with envy over your neighbour’s? Take off those rose-coloured glasses and come and feast your eyes on a tantalizing cocktail of colour along Princes Drive where sunflower cultivars are planted in a striking display along the roadside.",
+        "address": "145 Princes Drive Morwell",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.3914693,
+          -38.2350718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "title": "SUN DANCE",
+        "description": "This narrow little site has been fitted with heliostats  – sun-reflecting devices that will enable a crop of sunflowers to grow where they otherwise could not. Grab your sunnies and be inspired by this simple science experiment that reminds us of the life-giving power of the sun.",
+        "address": "178 – 180 Commercial Road Morwell",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.3985962,
+          -38.2386444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "title": "PROCESS",
+        "description": "Natural processes such as people, birds, and wind alters the landscape of sunflowers and begins to form individual spaces that are unique from one another. Different portions of site at different stages in development.",
+        "address": "39 – 57 Church Street Morwell",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.3967913,
+          -38.2354028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "title": "SPIRO",
+        "description": "Inspired by the mathematics of sunflower planting and the growth of the seed head, Spiro takes you on an experiential journey into the inner geometry of the sunflower. Walk the gradient of dense rows and wide open spaces to find your way to unexpected places.",
+        "address": "21 Beattie Crescent Morwell",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.429143,
+          -38.222272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "title": "RADIATE",
+        "description": "Rows of sunflowers radiate from existing clusters of trees and shrubs to create a hypnotic pattern of vibrant yellow and green. Pick a path and walk through the many rows or rise above on the scissor lift and enjoy the view!",
+        "address": "Dunbar Road, Traralgon (next to Cooinda Hill)",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.533127,
+          -38.206416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "title": "LOVE/15",
+        "description": "Tennis anyone? The historic VRI Hall tennis courts have long ago turned to seed, but now a new game emerges, one filled by golden sunflower faces that follow the arc of the sun through the course of the day. Be a part of this new game and try to figure out who the viewer is, or who is being viewed. Game, Set, Match!",
+        "address": "14 Queens Parade Traralgon",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.53801,
+          -38.199541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "title": "BANANARAMA",
+        "description": "Move over Big Pineapple, make way Big Prawn. Inspired by the organic form of a banana, or perhaps an elongated kidney bean, this planting of sunflowers in the sleepy town of Tyers will present a welcoming landmark to at least rival that wacky bus stop across the road.",
+        "address": "Corner Tyers Rd and Walhalla-Tyers Rd",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.480131,
+          -38.148789
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "title": "SUNFLOWER HILL",
+        "description": "Sunflower Hill is a playful title alluding to a potential landmark that signposts the town of Glengarry. Made with recycled soil and tyres, Sunflower Hill has flowers rising up out of the roadside verge.",
+        "address": "126 Traralgon-Maffra Road Glengarry",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.575605,
+          -38.119164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "title": "SUNNIES ON THE RISE",
+        "description": "Watch this tiny slope grow tall as hundreds of sunflowers rise from the ground. Remember the tune of that Creedence song? Well this time it’s those happy sunnies that are on the rise. Drive past and sing along…",
+        "address": "LOT 20 Marina Drive Churchill",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.4187753,
+          -38.3134118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "title": "THE LABYRINTH",
+        "description": "If you dare venture into this maze be sure to bring a friend, for this is a place where anything is possible and nothing is as it seems. Keep watch for talking worms and late rabbits as you find your way to the centre where the Seat of Eternal Rest awaits – or does it?.",
+        "address": "283 Princes Drive Morwell",
+        "former_site_description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.4059573,
+          -38.2385036
+        ]
+      }
+    }
+  ]
+}

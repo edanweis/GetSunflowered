@@ -1,66 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
-	<!ENTITY st0 "fill:#ADDEDC;">
-	<!ENTITY st1 "fill:#E361A4;">
-	<!ENTITY st2 "fill:#BB5CA3;">
-	<!ENTITY st3 "fill:#7D57A4;">
-	<!ENTITY st4 "fill:#A4D0EF;">
-	<!ENTITY st5 "fill:#00548D;">
-	<!ENTITY st6 "fill:#009BDA;">
-	<!ENTITY st7 "fill:#F15A29;">
-	<!ENTITY st8 "fill:#FFFFFF;">
-	<!ENTITY st9 "fill:#97ABD8;">
-	<!ENTITY st10 "fill:#F8BFD8;">
-	<!ENTITY st11 "fill:#F69080;">
-	<!ENTITY st12 "fill:none;stroke:#00AEEF;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-	<!ENTITY st13 "fill:none;stroke:#EF4136;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-	<!ENTITY st14 "fill:none;stroke:#FFF200;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-	<!ENTITY st15 "fill:none;stroke:#DA1C5C;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-	<!ENTITY st16 "fill:none;stroke:#2BB673;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-	<!ENTITY st17 "fill:none;stroke:#87CBF0;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-	<!ENTITY st18 "fill:none;stroke:#F6ADCD;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-	<!ENTITY st19 "fill:none;stroke:#FFFFFF;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-	<!ENTITY st20 "fill:none;stroke:#8B5E3C;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-	<!ENTITY st21 "fill:#F16460;">
-	<!ENTITY st22 "fill:none;stroke:#FFF200;stroke-width:7;stroke-miterlimit:10;">
-	<!ENTITY st23 "fill:#E6E7E8;">
-	<!ENTITY st24 "fill:#F17DB1;stroke:#F17DB1;stroke-width:8.2549;stroke-miterlimit:10;">
-	<!ENTITY st25 "fill:#DBA5CB;stroke:#DBA5CB;stroke-width:8.2549;stroke-miterlimit:10;">
-	<!ENTITY st26 "fill:#EC008C;stroke:#EC008C;stroke-width:8.2549;stroke-miterlimit:10;">
-	<!ENTITY st27 "fill:#9E91C5;">
-	<!ENTITY st28 "fill:none;stroke:#FFF200;stroke-width:7;stroke-linecap:round;stroke-miterlimit:10;">
-	<!ENTITY st29 "fill:#4D9D47;">
-	<!ENTITY st30 "fill:none;stroke:#FFFFFF;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-	<!ENTITY st31 "fill:#55BF9E;">
-	<!ENTITY st32 "fill:#8ED8F8;">
-	<!ENTITY st33 "fill:#00969E;">
-	<!ENTITY st34 "fill:none;stroke:#00969E;stroke-width:7;stroke-miterlimit:10;">
-	<!ENTITY st35 "fill:#B1CFDE;">
-	<!ENTITY st36 "fill:#F26522;">
-	<!ENTITY st37 "fill:#ED1B32;">
-	<!ENTITY st38 "fill:#FFF200;">
-	<!ENTITY st39 "fill:#A5DFF9;">
-	<!ENTITY st40 "fill:#8DC63F;">
-	<!ENTITY st41 "fill:#F26971;">
-	<!ENTITY st42 "fill:#AC88B1;">
-	<!ENTITY st43 "fill:#EF4136;">
-	<!ENTITY st44 "fill:#00AEEF;">
-	<!ENTITY st45 "fill:#8B5E3C;">
-	<!ENTITY st46 "fill:#2BB673;">
-	<!ENTITY st47 "fill:#DA1C5C;">
-	<!ENTITY st48 "fill:#87CBF0;">
-	<!ENTITY st49 "fill:#F6ADCD;">
-	<!ENTITY st50 "fill:#0064A0;">
-	<!ENTITY st51 "fill:#73C7AA;">
-	<!ENTITY st52 "fill:none;stroke:#9159A4;stroke-width:50;stroke-linecap:round;stroke-miterlimit:10;">
-	<!ENTITY st53 "fill:none;stroke:#EF4444;stroke-width:50;stroke-linecap:round;stroke-miterlimit:10;">
-	<!ENTITY st54 "fill:#F79880;">
-	<!ENTITY st55 "fill:#74C273;">
-	<!ENTITY st56 "fill:#F17DB1;">
-]>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 311.3 420.4" style="enable-background:new 0 0 311.3 420.4;" xml:space="preserve">
-<rect x="0" y="0" style="&st39;" width="311.3" height="420.4"/>
-<polygon style="&st40;" points="311.3,293.4 311.3,419.9 0,419.9 0,132.4 "/>
+	 viewBox="0 0 319 550" enable-background="new 0 0 319 550" xml:space="preserve">
+<rect y="60.4" fill="#73C7AA" width="319" height="429.2"/>
+<g>
+	<path fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M144.1,406l5.9,0.5l5.9,0.3l5.9,0.1c61.9-1.2,114.4-44.7,126.9-105.4l1.1-5.8l0.7-5.8c7-61.3-29.7-119.4-88-139.4l-5.6-1.8
+		l-5.7-1.5l-5.8-1.3l-5.8-1c-61.2-9.3-120.2,24.9-142.8,82.5l-2,5.6l-1.7,5.6C15.7,297.8,42,361,96.2,390.8l5.3,2.7l5.4,2.6l5.5,2.3
+		"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M148.9,401.7"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M174.2,374l5-0.9c52.1-10.3,87.2-60.2,79.3-112.6l-0.8-5"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M240.5,216.1l-3.2-4l-3.3-3.9c-34.6-38.6-92.6-44.3-134.2-13.5l-4,3.2l-3.8,3.4c-39.6,36.3-43.5,97.3-8.9,138.4l3.5,3.8l3.6,3.7"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M196.5,330.5l3.5-2.5l3.3-2.7c24.5-21.3,30.2-56.9,13.5-84.7l-2.3-3.6l-2.5-3.5c-20-25.4-55.5-32.9-83.9-17.6l-3.7,2l-3.5,2.4"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M95.8,255.4l-1.1,4.1c-5.1,21,0.5,43.3,14.7,59.5l3,3.1"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M174.2,308.5l2.7-1.3l2.6-1.5c28.7-19.3,17.9-63.1-16.6-67l-3.1-0.1l-3.1,0.1c-34.6,3-46.3,46.7-18,66.6l2.5,1.6l2.7,1.4"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="112.3" y1="398.1" x2="112.3" y2="322.1"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="144.1" y1="406" x2="144.1" y2="308.2"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="174.2" y1="374" x2="174.2" y2="308.5"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="129.4" y1="254.3" x2="78.2" y2="216.7"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="220.5" y1="247.9" x2="279.8" y2="221.1"/>
+</g>
 </svg>

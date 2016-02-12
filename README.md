@@ -35,7 +35,12 @@ Visit [Mapbox Studio](https://www.mapbox.com/studio/) and open the GetSunflowere
         });
 ```
 
-**Note** Make sure all files are saved over/in the same location.
+To upload a new marker (small numbered circle) images, create a new svg (58 x 58px) based on an existing marker svg file and upload on Mapbox Studio.
+
+**Note**
+
+- Make sure all files are saved over/in the same location.
+- Remember to republish your map in Mapbox Editor after making changes.
 
 
 Testing locally

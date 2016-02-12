@@ -1,250 +1,251 @@
 var context = {
     sites: [
     {
-        "id": 1,
-        "title": "TILTED HILL",
-        "description": "",
-        "address": "4 Fowler Street Moe",
-        "coordinates_latlng": [
-        -38.1777054,
-        146.2607404
-        ],
-        "designers": [
-        "Ben Morrison"
-        ],
-        "status": "some status",
-        "background_color": "#addddc",
-        "marker_color": "#7d56a3",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 2,
-        "title": "DROPS OF SUNSHINE",
-        "description": "The clouds have parted, the storm has passed, and the hill is beaming in suspended animation, soaked in nourishing drops of sunshine. Wander up a path to discover a place of calm and quiet reflection, where gentle curves and sweet aromas cleanse the soul. When you reach the centre, take off your shoes, touch the earth and bask in the golden glow.",
-        "address": "94 – 96 Narracan Drive, Moe",
-        "former_site_description": "Hospital",
-        "coordinates_latlng": [
-        -38.1821305,
-        146.2766924
-        ],
-        "designers": [
-        "karres+brands"
-        ],
-        "status": "",
-        "background_color": "#97abd8",
-        "marker_color": "#97abd8",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 3,
-        "title": "SHAPE SHIFTER",
-        "description": "Come and explore the strangely familiar. As you wander toward the centre of each planting discover various shapes of sunflowers that conceal square rooms, rectangular passages and arc-shaped voids within them. This design is about legibility, identity and familiarity.",
-        "address": "Corner North & Mills Road Yallourn North",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.1560069,
-        146.3477756
-        ],
-        "designers": [
-        "Endemic"
-        ],
-        "status": "",
-        "background_color": "#a4d0ef",
-        "marker_color": "#009ad9",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 4,
-        "title": "COCKTAIL",
-        "description": "Feeling blue about your garden? Are you green with envy over your neighbour’s? Take off those rose-coloured glasses and come and feast your eyes on a tantalizing cocktail of colour along Princes Drive where sunflower cultivars are planted in a striking display along the roadside.",
-        "address": "145 Princes Drive Morwell",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.2350718,
-        146.3914693
-        ],
-        "designers": [
-        "OUTR"
-        ],
-        "status": "",
-        "background_color": "#f5907f",
-        "marker_color": "#f5907f",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 5,
-        "title": "SUN DANCE",
-        "description": "This narrow little site has been fitted with heliostats  – sun-reflecting devices that will enable a crop of sunflowers to grow where they otherwise could not. Grab your sunnies and be inspired by this simple science experiment that reminds us of the life-giving power of the sun.",
-        "address": "178 – 180 Commercial Road Morwell",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.2386444,
-        146.3985962
-        ],
-        "designers": [
-        "OUTR"
-        ],
-        "status": "",
-        "background_color": "#f1635f",
-        "marker_color": "#f1635f",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 6,
-        "title": "PROCESS",
-        "description": "Natural processes such as people, birds, and wind alters the landscape of sunflowers and begins to form individual spaces that are unique from one another. Different portions of site at different stages in development.",
-        "address": "39 – 57 Church Street Morwell",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.2354028,
-        146.3967913
-        ],
-        "designers": [
-        "Stoss/OUTR"
-        ],
-        "status": "",
-        "background_color": "#e6e7e8",
-        "marker_color": "#ec008b",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 7,
-        "title": "SPIRO",
-        "description": "Inspired by the mathematics of sunflower planting and the growth of the seed head, Spiro takes you on an experiential journey into the inner geometry of the sunflower. Walk the gradient of dense rows and wide open spaces to find your way to unexpected places.",
-        "address": "21 Beattie Crescent Morwell",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.222272,
-        146.429143
-        ],
-        "designers": [
-        "STOSS", "OUTR"
-        ],
-        "status": "",
-        "background_color": "#F05A28",
-        "marker_color": "#F05A28",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 8,
-        "title": "RADIATE",
-        "description": "Rows of sunflowers radiate from existing clusters of trees and shrubs to create a hypnotic pattern of vibrant yellow and green. Pick a path and walk through the many rows or rise above on the scissor lift and enjoy the view!",
-        "address": "Dunbar Road, Traralgon (next to Cooinda Hill)",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.206416,
-        146.533127
-        ],
-        "designers": [
-        "STOSS"
-        ],
-        "status": "",
-        "background_color": "#9D90C5",
-        "marker_color": "#9D90C5",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 9,
-        "title": "LOVE/15",
-        "description": "Tennis anyone? The historic VRI Hall tennis courts have long ago turned to seed, but now a new game emerges, one filled by golden sunflower faces that follow the arc of the sun through the course of the day. Be a part of this new game and try to figure out who the viewer is, or who is being viewed. Game, Set, Match!",
-        "address": "14 Queens Parade Traralgon",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.199541,
-        146.538010
-        ],
-        "designers": [
-        "OUTR"
-        ],
-        "status": "",
-        "background_color": "#4C9D46",
-        "marker_color": "#4C9D46",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 10,
-        "title": "BANANARAMA",
-        "description": "Move over Big Pineapple, make way Big Prawn. Inspired by the organic form of a banana, or perhaps an elongated kidney bean, this planting of sunflowers in the sleepy town of Tyers will present a welcoming landmark to at least rival that wacky bus stop across the road.",
-        "address": "Corner Tyers Rd and Walhalla-Tyers Rd",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.148789,
-        146.480131
-        ],
-        "designers": [
-        ""
-        ],
-        "status": "",
-        "background_color": "#54BF9E",
-        "marker_color": "#54BF9E",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 11,
-        "title": "SUNFLOWER HILL",
-        "description": "Sunflower Hill is a playful title alluding to a potential landmark that signposts the town of Glengarry. Made with recycled soil and tyres, Sunflower Hill has flowers rising up out of the roadside verge.",
-        "address": "126 Traralgon-Maffra Road Glengarry",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.119164,
-        146.575605
-        ],
-        "designers": [
-        "Ben Morieson"
-        ],
-        "status": "",
-        "background_color": "#8DD7F7",
-        "marker_color": "#00969E",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 12,
-        "title": "SUNNIES ON THE RISE",
-        "description": "Watch this tiny slope grow tall as hundreds of sunflowers rise from the ground. Remember the tune of that Creedence song? Well this time it’s those happy sunnies that are on the rise. Drive past and sing along…",
-        "address": "LOT 20 Marina Drive Churchill",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.313460,
-        146.421022
-        ],
-        "designers": [
-        ""
-        ],
-        "status": "",
-        "background_color": "#B1CFDE",
-        "marker_color": "#00B9F1",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    },
-    {
-        "id": 13,
-        "title": "THE LABYRINTH",
-        "description": "If you dare venture into this maze be sure to bring a friend, for this is a place where anything is possible and nothing is as it seems. Keep watch for talking worms and late rabbits as you find your way to the centre where the Seat of Eternal Rest awaits – or does it?.",
-        "address": "283 Princes Drive Morwell",
-        "former_site_description": "",
-        "coordinates_latlng": [
-        -38.238357,
-        146.406564
-        ],
-        "designers": [
-        ""
-        ],
-        "status": "",
-        "background_color": "#A5DFF9",
-        "marker_color": "#72C7AA",
-        "url": "http://www.getsunflowered.com",
-        "hidden": false
-    }
-    ]
+    "id": 1,
+    "title": "TILTED HILL",
+    "description": "",
+    "address": "4 Fowler Street Moe",
+    "coordinates_latlng": [
+      -38.1777054,
+      146.2607404
+    ],
+    "designers": [
+      "Ben Morrison"
+    ],
+    "status": "some status",
+    "background_color": "#addddc",
+    "marker_color": "#7d56a3",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 2,
+    "title": "DROPS OF SUNSHINE",
+    "description": "The clouds have parted, the storm has passed, and the hill is beaming in suspended animation, soaked in nourishing drops of sunshine. Wander up a path to discover a place of calm and quiet reflection, where gentle curves and sweet aromas cleanse the soul. When you reach the centre, take off your shoes, touch the earth and bask in the golden glow.",
+    "address": "94 – 96 Narracan Drive, Moe",
+    "former_site_description": "Hospital",
+    "coordinates_latlng": [
+      -38.1821305,
+      146.2766924
+    ],
+    "designers": [
+      "karres+brands"
+    ],
+    "status": "",
+    "background_color": "#97abd8",
+    "marker_color": "#97abd8",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 3,
+    "title": "SHAPE SHIFTER",
+    "description": "Come and explore the strangely familiar. As you wander toward the centre of each planting discover various shapes of sunflowers that conceal square rooms, rectangular passages and arc-shaped voids within them. This design is about legibility, identity and familiarity.",
+    "address": "Corner North & Mills Road Yallourn North",
+    "former_site_description": "",
+    "coordinates_latlng": [
+      -38.1560069,
+      146.3477756
+    ],
+    "designers": [
+      "Endemic"
+    ],
+    "status": "",
+    "background_color": "#a4d0ef",
+    "marker_color": "#009ad9",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 4,
+    "title": "COCKTAIL",
+    "description": "Feeling blue about your garden? Are you green with envy over your neighbour’s? Take off those rose-coloured glasses and come and feast your eyes on a tantalizing cocktail of colour along Princes Drive where sunflower cultivars are planted in a striking display along the roadside.",
+    "address": "145 Princes Drive Morwell",
+    "former_site_description": "",
+    "coordinates_latlng": [
+      -38.2350718,
+      146.3914693
+    ],
+    "designers": [
+      "OUTR"
+    ],
+    "status": "",
+    "background_color": "#f5907f",
+    "marker_color": "#f5907f",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 5,
+    "title": "SUN DANCE",
+    "description": "This narrow little site has been fitted with heliostats  – sun-reflecting devices that will enable a crop of sunflowers to grow where they otherwise could not. Grab your sunnies and be inspired by this simple science experiment that reminds us of the life-giving power of the sun.",
+    "address": "178 – 180 Commercial Road Morwell",
+    "former_site_description": "",
+    "coordinates_latlng": [
+      -38.2386444,
+      146.3985962
+    ],
+    "designers": [
+      "OUTR"
+    ],
+    "status": "",
+    "background_color": "#f1635f",
+    "marker_color": "#f1635f",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 6,
+    "title": "PROCESS",
+    "description": "Natural processes such as people, birds, and wind alters the landscape of sunflowers and begins to form individual spaces that are unique from one another. Different portions of site at different stages in development.",
+    "address": "39 – 57 Church Street Morwell",
+    "former_site_description": "",
+    "coordinates_latlng": [
+      -38.2354028,
+      146.3967913
+    ],
+    "designers": [
+      "Stoss/OUTR"
+    ],
+    "status": "",
+    "background_color": "#e6e7e8",
+    "marker_color": "#ec008b",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 7,
+    "title": "SPIRO",
+    "description": "Inspired by the mathematics of sunflower planting and the growth of the seed head, Spiro takes you on an experiential journey into the inner geometry of the sunflower. Walk the gradient of dense rows and wide open spaces to find your way to unexpected places.",
+    "address": "21 Beattie Crescent Morwell",
+    "former_site_description": "",
+    "coordinates_latlng": [
+      -38.222272,
+      146.429143
+    ],
+    "designers": [
+      "STOSS",
+      "OUTR"
+    ],
+    "status": "",
+    "background_color": "#F05A28",
+    "marker_color": "#F05A28",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 8,
+    "title": "RADIATE",
+    "description": "Rows of sunflowers radiate from existing clusters of trees and shrubs to create a hypnotic pattern of vibrant yellow and green. Pick a path and walk through the many rows or rise above on the scissor lift and enjoy the view!",
+    "address": "Dunbar Road, Traralgon (next to Cooinda Hill)",
+    "former_site_description": "",
+    "coordinates_latlng": [
+      -38.206416,
+      146.533127
+    ],
+    "designers": [
+      "STOSS"
+    ],
+    "status": "",
+    "background_color": "#9D90C5",
+    "marker_color": "#9D90C5",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 9,
+    "title": "LOVE/15",
+    "description": "Tennis anyone? The historic VRI Hall tennis courts have long ago turned to seed, but now a new game emerges, one filled by golden sunflower faces that follow the arc of the sun through the course of the day. Be a part of this new game and try to figure out who the viewer is, or who is being viewed. Game, Set, Match!",
+    "address": "14 Queens Parade Traralgon",
+    "former_site_description": "",
+    "coordinates_latlng": [
+      -38.199541,
+      146.53801
+    ],
+    "designers": [
+      "OUTR"
+    ],
+    "status": "",
+    "background_color": "#4C9D46",
+    "marker_color": "#4C9D46",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 10,
+    "title": "BANANARAMA",
+    "description": "Move over Big Pineapple, make way Big Prawn. Inspired by the organic form of a banana, or perhaps an elongated kidney bean, this planting of sunflowers in the sleepy town of Tyers will present a welcoming landmark to at least rival that wacky bus stop across the road.",
+    "address": "Corner Tyers Rd and Walhalla-Tyers Rd",
+    "former_site_description": "",
+    "coordinates_latlng": [
+      -38.148789,
+      146.480131
+    ],
+    "designers": [
+      ""
+    ],
+    "status": "",
+    "background_color": "#54BF9E",
+    "marker_color": "#54BF9E",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 11,
+    "title": "SUNFLOWER HILL",
+    "description": "Sunflower Hill is a playful title alluding to a potential landmark that signposts the town of Glengarry. Made with recycled soil and tyres, Sunflower Hill has flowers rising up out of the roadside verge.",
+    "address": "126 Traralgon-Maffra Road Glengarry",
+    "former_site_description": "",
+    "coordinates_latlng": [
+      -38.119164,
+      146.575605
+    ],
+    "designers": [
+      "Ben Morieson"
+    ],
+    "status": "",
+    "background_color": "#8DD7F7",
+    "marker_color": "#00969E",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+   {
+    "id": 12,
+    "title": "SUNNIES ON THE RISE",
+    "description": "Watch this tiny slope grow tall as hundreds of sunflowers rise from the ground. Remember the tune of that Creedence song? Well this time it’s those happy sunnies that are on the rise. Drive past and sing along…",
+    "address": "LOT 20 Marina Drive Churchill",
+    "former_site_description": "",
+    "coordinates_latlng": [
+     -38.3134118,
+     146.4187753
+    ],
+    "designers": [
+      "OUTR"
+    ],
+    "status": "",
+    "background_color": "#a5def9",
+    "marker_color": "#00b9f1",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  },
+  {
+    "id": 13,
+    "title": "THE LABYRINTH",
+    "description": "If you dare venture into this maze be sure to bring a friend, for this is a place where anything is possible and nothing is as it seems. Keep watch for talking worms and late rabbits as you find your way to the centre where the Seat of Eternal Rest awaits – or does it?",
+    "address": "283 Princes Drive Morwell",
+    "former_site_description": "",
+    "coordinates_latlng": [
+      -38.2385036,
+      146.4059573
+    ],
+    "designers": [
+      "OUTR"
+    ],
+    "status": "",
+    "background_color": "#72c7aa",
+    "marker_color": "#72c7aa",
+    "url": "http://www.getsunflowered.com",
+    "hidden": false
+  }
+  ]
 }

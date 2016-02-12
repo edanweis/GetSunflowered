@@ -33,6 +33,7 @@
 <script src="data.json" type="text/javascript" language="javascript"></script>
 
 <body> 
+
     
     <div id="glide" class="glide">
         <div class="glide__wrapper">
@@ -40,8 +41,14 @@
             <!-- handlebars template context goes here -->    
             </ul>
             <div id="map"></div>
-<!--             
-            <i class="material-icons next">navigate_next</i> -->
+            <div id="footer">
+                <!-- <a href="#GoogleDirections" modal-trigger class="getroute"><img src="img/gmap.png" class="gmap-icon"/> Get Directions</a> -->
+                <a class="logo getsponsors" href="#Sponsors" modal-trigger >
+                    <div class="get">#Get</div>
+                    <div class="sunflowered">Sunflowered</div>
+                    <div class="findoutmore">Find out more</div>
+                </a>
+            </div>
             <div class="glide__arrows">
                 <button class="glide__arrow prev" data-glide-dir="<"><i class="material-icons">navigate_before</i></button>
                 <button class="glide__arrow next" data-glide-dir=">"><i class="material-icons">navigate_next</i></button>
@@ -59,7 +66,53 @@
         </a>
       </div>
 
-   
+      <!-- Modal Structure -->
+      <div id="Sponsors" class="modal bottom-sheet noselect">
+      
+        <div class="modal-content modal-sponsors">
+        <div class="more">
+        <a class="logo getsponsors" >
+                    <div class="get">#Get</div>
+                    <div class="sunflowered">Sunflowered</div>
+                </a>
+
+        <p>
+            To find out more, visit:</p>
+        <p> 
+        <ul>
+            <li><a href="http://growth.outr.org/getsunflowered" target="_blank">OUTR - Office of Urban Transformation Research</a></li>
+            <li><a href="http://blog.outr.org/search/label/GetSunflowered" target="_blank">#GetSunflowered Blog</a></li>
+            <li><a href="http://facebook.com/ReactivateLatrobeValley" target="_blank">Reactive Latrobe Valley on Facebook</a></li>
+            <li><a href="http://facebook.com/events/668497809930366/" target="_blank">#GetSunflowered on Facebook</a></li>
+        </ul>
+
+        </p>
+        </div>
+        <h4 class="sponsors-title">Sponsors</h4>
+         <ul class="sponsor-list">
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Latrobe City Council.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Outr.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_RMIT Univ.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Reactivate Latrobe.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_State Gov.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Advance Morwell.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_AGL.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Copsley Ornamentals.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_GaryLee.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Gippswater.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_LAtrobe Valley Buslines.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Morwell Neighbourhood House.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Nuseed.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Prorent.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_RDV.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Traralgon Neighbourhood House.png"></div></li>
+                 <li><div><img src="img/sponsors/GS_Sponsor Logos_Young Signs.png"></div></li>
+         </ul>
+        </div>
+      
+      </div>
+
+   <div class="fadein"></div>
     
 
     <script>
@@ -69,6 +122,7 @@
             // console.log(e.target)
         })
 
+        $('.fadein').css('background', 'transparent');
         // init handlebars template
         var template = Handlebars.templates['sites']
         var html  = template(context);
@@ -88,6 +142,7 @@
         var mapEnabled = false;
         var loc_enabled = false;
         var route = [];
+        var firstFly = true;
 
         glide.on("swipeEnd.glide", function(event, data) {
             currentSlide = glide_api.current();
@@ -281,6 +336,16 @@
             }
           );
 
+          $('.getsponsors').leanModal({
+              dismissible: true, // Modal can be dismissed by clicking outside of the modal
+              opacity: 0, // Opacity of modal background
+              in_duration: 200, // Transition in duration
+              out_duration: 200, // Transition out duration
+              ready: function() { }, // Callback for Modal open
+              complete: function() { } // Callback for Modal close
+            }
+          );
+
 
 
 
@@ -431,6 +496,7 @@
                 watchID = navigator.geolocation.watchPosition(geo_success, geo_error, geo_options);
             } else {
                 // alert("Sorry you don't have geo");
+
             }
         }
 
@@ -467,24 +533,27 @@
         }
 
         function fly(position) {
-            map.flyTo({
-                center: [
-                    position.coords.longitude,
-                    position.coords.latitude
-                ],
-                zoom: zoom_level,
-                bearing: 0,
-                // These options control the flight curve, making it move
-                // slowly and zoom out almost completely before starting
-                // to pan.
-                speed: 1.5, // make the flying slow
-                curve: 1, // change the speed at which it zooms out
-                // This can be any easing function: it takes a number between
-                // 0 and 1 and returns another number between 0 and 1.
-                easing: function(t) {
-                    return t;
-                }
-            });
+            if (firstFly == true){
+                map.flyTo({
+                    center: [
+                        position.coords.longitude,
+                        position.coords.latitude
+                    ],
+                    zoom: zoom_level,
+                    bearing: 0,
+                    // These options control the flight curve, making it move
+                    // slowly and zoom out almost completely before starting
+                    // to pan.
+                    speed: 1.5, // make the flying slow
+                    curve: 1, // change the speed at which it zooms out
+                    // This can be any easing function: it takes a number between
+                    // 0 and 1 and returns another number between 0 and 1.
+                    easing: function(t) {
+                        return t;
+                    }
+                });
+                firstFly = false;
+            }
         }
 
 

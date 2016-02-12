@@ -50,6 +50,116 @@ body {
 
 }
 
+.fadein{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: white;
+  pointer-events: none;
+  /*transition-delay:1.5s;*/
+  -webkit-transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+#footer{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  color: white;
+  margin-left: -1em;
+  padding: 0.3em 1em 1em 2em ;
+  font-family: 'futurabtmedium', Arial;
+  letter-spacing: .1em;
+  z-index: 1;
+  zoom: 2;
+}
+
+.modal-sponsors p, .modal-sponsors a{
+   font-family: 'futurabtmedium', Arial !important;
+}
+
+
+.more{
+  padding-left: 4vw;
+  padding-bottom: 3em;
+}
+.more li a{
+  color: #8c62a9;
+}
+
+.more .logo div{
+  font-size: 2.8em !important;
+  line-height: 1.2em;
+}
+
+.more .logo{
+  display: block;
+  padding-bottom: 2em !important;
+}
+
+.logo div{
+  font-size: 0.8em;
+  line-height: 1.2em;
+}
+
+.get{
+  color: #8c62a9;
+
+}
+
+.sunflowered{
+  color: #f16871;
+}
+
+.sponsors-title{
+  padding-left: 4vw;
+}
+.sponsor-list{
+  padding-top: 1em;
+
+}
+
+.sponsor-list li{
+  display: inline;
+}
+
+.sponsor-list li div{
+   vertical-align : middle;
+   display: inline-table;
+}
+.sponsor-list li div img{
+  width: 25vw;
+  max-width: 200px;
+  opacity: 0.85;
+  padding: 1.5vh 4vw;
+}
+
+.modal-sponsors{
+  height: auto;
+}
+
+.modal.bottom-sheet{
+  max-height: 60vh;
+  /*overflow: hidden;*/
+}
+
+.findoutmore{
+  /*color: rgba(0,0,0,0.77);  */
+  color: white;
+  padding-top: 0.5em;
+  font-size: 0.65em !important;
+}
+
+.findoutmore:active, .findoutmore:visited, .findoutmore:hover{
+  color: white;
+}
 
 .glide__arrow i{
   font-size: 5rem !important;
@@ -623,12 +733,20 @@ h4{
     font-size: 1.2em !important;
   }
 
+  h4.sponsors-title{
+    font-size: 1.5em !important;
+  }
+
   .dropdown-button i{
     font-size: 1.4em !important;
     margin-top: 3px !important;
   }
   .title-text{
     letter-spacing: 0;
+  }
+
+    #footer{
+    zoom: 1;
   }
 }
 
@@ -645,6 +763,10 @@ h4{
 
   .title-text{
     letter-spacing: 0.2em !important
+  }
+
+  #footer{
+    zoom: 2.5;
   }
 }
 
