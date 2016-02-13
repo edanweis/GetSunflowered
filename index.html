@@ -86,8 +86,8 @@
             <li><a href="http://facebook.com/events/668497809930366/" target="_blank">#GetSunflowered on Facebook</a></li>
         </ul>
 
-        </p>
-        </div>
+        </p
+>        </div>
         <h4 class="sponsors-title">Sponsors</h4>
          <ul class="sponsor-list">
                  <li><div><img src="img/sponsors/GS_Sponsor Logos_Latrobe City Council.png"></div></li>
@@ -108,6 +108,8 @@
                  <li><div><img src="img/sponsors/GS_Sponsor Logos_Traralgon Neighbourhood House.png"></div></li>
                  <li><div><img src="img/sponsors/GS_Sponsor Logos_Young Signs.png"></div></li>
          </ul>
+
+
         </div>
       
       </div>
@@ -197,6 +199,7 @@
             $('.back_icon, .menu').show("slow");
             $('.description').toggleClass("visible fadeIn");
             flyToSite(currentSlide);
+            $('.logo').hide("fast");
         }
 
 
@@ -218,6 +221,7 @@
 
             $('.back_icon, .menu').hide();
             $('.id_icon').show("fast");
+            $('.logo').show("fast");
             map.setZoom(zoom_level);
 
         }
