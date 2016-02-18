@@ -137,6 +137,7 @@ body {
 .sponsor-list li div img{
   width: 25vw;
   max-width: 200px;
+  
   opacity: 0.85;
   padding: 1.5vh 4vw;
 }

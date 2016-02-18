@@ -5,12 +5,7 @@
     <meta charset='utf-8' />
     <title></title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#fff">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#fff">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+    
 
     <link href='css/mapbox-gl.css' rel='stylesheet' />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -151,7 +146,7 @@
             flyToSite(currentSlide);
         });
 
-        $('.glide__arrow').click(function(){
+        $('.glide__arrow').on('click touchstart', function () {
             triggerSlide();
         })
 
