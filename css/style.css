@@ -109,6 +109,10 @@ body {
   line-height: 1.2em;
 }
 
+.large-logo{
+  letter-spacing: 0.3em !important;
+}
+
 .get{
   color: #8c62a9;
 
